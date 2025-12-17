@@ -536,6 +536,7 @@ footer {
 }
 
 .about-content {
+    margin-top: 55px;
     background: white;
     padding: 30px;
     border-radius: 10px;
