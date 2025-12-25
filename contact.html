@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/logo.png" type="img/logo.png">
+    <meta name="description"
+        content="Contact Hungry Up for orders, feedback, or inquiries. We're here to serve you better.">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
     <title>Contact Us - Hungry Up</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
@@ -16,13 +22,23 @@
                 <img src="img/logo.png" alt="Hungry Up Logo">
                 <h1>Hungry Up</h1>
             </div>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                    <li><a href="#" id="cartLink">Cart <span class="cart-count">0</span></a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="menu.html"><i class="fas fa-utensils"></i> Menu</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li>
+                        <a href="#" id="cartLink">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -32,41 +48,132 @@
     <section class="contact-page">
         <div class="container">
             <div class="contact-header">
-                <h1>Contact Us</h1>
-                <p>We'd love to hear from you!</p>
+                <h1>Get In Touch</h1>
+                <p>We're here to help you with any questions or feedback</p>
             </div>
-            
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
+
+            <div class="contact-wrapper">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="order">Order Issue</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment"></i> Message</label>
+                            <textarea id="message" name="message" placeholder="Type your message here..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Our Location</h3>
+                            <p>Love Road, Mirpur, Dhaka</p>
+                        </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone Numbers</h3>
+                            <p>+8801773593797 (Primary)</p>
+                            <p>+8801234567890 (Support)</p>
+                        </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email Address</h3>
+                            <p>info@hungryup.com</p>
+                            <p>support@hungryup.com</p>
+                        </div>
                     </div>
-                    
-                    <button type="submit" class="btn-primary">Send Message</button>
-                </form>
+
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Opening Hours</h3>
+                            <ul class="hours-list">
+                                <li><span>Monday - Friday</span> <span>10:00 AM - 10:00 PM</span></li>
+                                <li><span>Saturday - Sunday</span> <span>11:00 AM - 11:00 PM</span></li>
+                                <li><span>Public Holidays</span> <span>12:00 PM - 9:00 PM</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <h3>Live Support</h3>
+                            <p>Available 24/7 for urgent matters</p>
+                            <p>Click the chat icon in bottom right</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="contact-info">
-                <div class="about-content">
-                    <h2>Get In Touch</h2>
-                    <p><i class="fas fa-map-marker-alt"></i> Love Road, Mirpur, Dhaka</p>
-                    <p><i class="fas fa-phone"></i> +8801773593797</p>
-                    <p><i class="fas fa-envelope"></i> info@hungryup.com</p>
-                    
-                    <h2>Opening Hours</h2>
-                    <p>Monday - Friday: 10:00 AM - 10:00 PM</p>
-                    <p>Saturday - Sunday: 11:00 AM - 11:00 PM</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="categories" style="background: white; padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="about-content" style="max-width: 800px; margin: 0 auto;">
+                <div class="about-section">
+                    <h2><i class="fas fa-question-circle"></i> How long does delivery take?</h2>
+                    <p>Delivery typically takes 30-45 minutes depending on your location and traffic conditions. During
+                        peak hours, it might take up to 60 minutes.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2><i class="fas fa-money-bill-wave"></i> What payment methods do you accept?</h2>
+                    <p>We accept cash on delivery, credit/debit cards, and mobile banking (bKash, Nagad, Rocket). Online
+                        payment is also available through our app.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2><i class="fas fa-undo"></i> What is your cancellation policy?</h2>
+                    <p>You can cancel your order within 5 minutes of placing it without any charge. After that, a
+                        cancellation fee may apply if the food preparation has started.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2><i class="fas fa-truck"></i> Do you deliver to my area?</h2>
+                    <p>We deliver to most areas in Dhaka. Enter your address during checkout to check if we deliver to
+                        your location. We're constantly expanding our delivery zones.</p>
                 </div>
             </div>
         </div>
@@ -76,19 +183,26 @@
     <div class="cart-modal" id="cartModal">
         <div class="cart-content">
             <div class="cart-header">
-                <h2>Your Cart</h2>
+                <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
                 <span class="close-btn" id="closeCart">&times;</span>
             </div>
             <div class="cart-body">
                 <div id="cartItems">
                     <!-- Cart items will be loaded here -->
-                    <p class="empty-cart-message">Your cart is empty</p>
+                    <div class="empty-cart-message">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Your cart is empty</p>
+                        <a href="menu.html" class="btn-primary" onclick="closeCartModal()">Browse Menu</a>
+                    </div>
                 </div>
                 <div class="cart-footer">
                     <div class="cart-total">
-                        <h3>Total: $<span id="cartTotal">00.0</span></h3>
+                        <h3>Total:</h3>
+                        <h3>$<span id="cartTotal">00.0</span></h3>
                     </div>
-                    <button class="btn-primary checkout-btn" id="checkoutBtn">Checkout</button>
+                    <button class="btn-primary checkout-btn" id="checkoutBtn">
+                        <i class="fas fa-credit-card"></i> Checkout Now
+                    </button>
                 </div>
             </div>
         </div>
@@ -100,15 +214,21 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Hungry Up</h3>
-                    <p>Delivering delicious food with love since 2025</p>
+                    <p><i class="fas fa-fire"></i> Delivering delicious food with love since 2025</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -124,6 +244,20 @@
         </div>
     </footer>
 
+    <!-- Live Chat Button -->
+    <div class="live-chat" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <button class="btn-primary" style="border-radius: 50%; width: 60px; height: 60px; padding: 0; font-size: 24px;"
+            onclick="openChat()">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        function openChat() {
+            alert("Live chat feature coming soon! For now, please call us at +8801773593797 or email info@hungryup.com");
+        }
+    </script>
 </body>
+
 </html>

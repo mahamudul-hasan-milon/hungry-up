@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/logo.png" type="img/logo.png">
+    <meta name="description"
+        content="Order delicious food online from Hungry Up. Fast delivery, fresh ingredients, and amazing taste.">
+    <meta name="keywords" content="food delivery, online food, pizza, burger, sandwich, restaurant">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
     <title>Hungry Up - Order Delicious Food Online</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
@@ -16,13 +23,24 @@
                 <img src="img/logo.png" alt="Hungry Up Logo">
                 <h1>Hungry Up</h1>
             </div>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#" id="cartLink">Cart <span class="cart-count">0</span></a></li>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="menu.html"><i class="fas fa-utensils"></i> Menu</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li>
+                        <a href="#" id="cartLink">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                    <li><a href="#" id="favoritesLink"><i class="fas fa-heart"></i> Favorites</a></li>
                 </ul>
             </nav>
         </div>
@@ -32,29 +50,39 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Delicious Food Delivered to Your Doorstep</h1>
-                <p>Order from our wide selection of mouth-watering dishes prepared by top chefs</p>
-                <a href="menu.html" class="btn-primary">Order Now</a>
+                <h1>Satisfy Your Cravings with Delicious Food</h1>
+                <p>Order from our wide selection of mouth-watering dishes prepared by top chefs. Fast delivery, fresh
+                    ingredients, and amazing taste guaranteed!</p>
+                <div class="hero-buttons">
+                    <a href="menu.html" class="btn-primary">Order Now</a>
+                    <a href="#categories" class="btn-secondary">Browse Categories</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Categories Section -->
-    <section class="categories">
+    <section class="categories" id="categories">
         <div class="container">
-            <h2>Popular Categories</h2>
+            <h2 class="section-title">Popular Categories</h2>
+            <p class="section-subtitle">Explore our delicious food categories</p>
+
             <div class="category-grid">
-                <div class="category-card">
-                    <img src="img/category/pizza.jpg" alt="Pizza">
+                <div class="category-card" onclick="location.href='menu.html?category=pizza'">
+                    <img src="img/category/pizza.jpg" alt="Pizza" loading="lazy">
                     <h3>Pizza</h3>
                 </div>
-                <div class="category-card">
-                    <img src="img/category/burger.jpg" alt="Burgers">
+                <div class="category-card" onclick="location.href='menu.html?category=burger'">
+                    <img src="img/category/burger.jpg" alt="Burgers" loading="lazy">
                     <h3>Burgers</h3>
                 </div>
-                <div class="category-card">
-                    <img src="img/category/sandwich.jpg" alt="Sandwiches">
+                <div class="category-card" onclick="location.href='menu.html?category=sandwich'">
+                    <img src="img/category/sandwich.jpg" alt="Sandwiches" loading="lazy">
                     <h3>Sandwiches</h3>
+                </div>
+                <div class="category-card" onclick="location.href='menu.html'">
+                    <img src="img/category/desserts.jpg" alt="Desserts" loading="lazy">
+                    <h3>Desserts</h3>
                 </div>
             </div>
         </div>
@@ -63,9 +91,39 @@
     <!-- Featured Items Section -->
     <section class="featured">
         <div class="container">
-            <h2>Featured Items</h2>
+            <h2 class="section-title">Today's Specials</h2>
+            <p class="section-subtitle">Chef's recommendations for today</p>
+
             <div class="food-grid" id="featuredFoods">
                 <!-- Featured items will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="categories" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Why Choose Hungry Up?</h2>
+
+            <div class="category-grid">
+                <div class="category-card" style="text-align: center; padding: 30px;">
+                    <i class="fas fa-bolt"
+                        style="font-size: 50px; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h3>Fast Delivery</h3>
+                    <p style="color: var(--text-light); margin-top: 15px;">30-45 minutes delivery guaranteed</p>
+                </div>
+                <div class="category-card" style="text-align: center; padding: 30px;">
+                    <i class="fas fa-leaf"
+                        style="font-size: 50px; color: var(--success-color); margin-bottom: 20px;"></i>
+                    <h3>Fresh Ingredients</h3>
+                    <p style="color: var(--text-light); margin-top: 15px;">100% fresh and organic ingredients</p>
+                </div>
+                <div class="category-card" style="text-align: center; padding: 30px;">
+                    <i class="fas fa-award"
+                        style="font-size: 50px; color: var(--warning-color); margin-bottom: 20px;"></i>
+                    <h3>Best Quality</h3>
+                    <p style="color: var(--text-light); margin-top: 15px;">Award-winning chefs and recipes</p>
+                </div>
             </div>
         </div>
     </section>
@@ -74,19 +132,26 @@
     <div class="cart-modal" id="cartModal">
         <div class="cart-content">
             <div class="cart-header">
-                <h2>Your Cart</h2>
+                <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
                 <span class="close-btn" id="closeCart">&times;</span>
             </div>
             <div class="cart-body">
                 <div id="cartItems">
                     <!-- Cart items will be loaded here -->
-                    <p class="empty-cart-message">Your cart is empty</p>
+                    <div class="empty-cart-message">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Your cart is empty</p>
+                        <a href="menu.html" class="btn-primary" onclick="closeCartModal()">Browse Menu</a>
+                    </div>
                 </div>
                 <div class="cart-footer">
                     <div class="cart-total">
-                        <h3>Total: $<span id="cartTotal">00.0</span></h3>
+                        <h3>Total:</h3>
+                        <h3>$<span id="cartTotal">00.0</span></h3>
                     </div>
-                    <button class="btn-primary checkout-btn" id="checkoutBtn">Checkout</button>
+                    <button class="btn-primary checkout-btn" id="checkoutBtn">
+                        <i class="fas fa-credit-card"></i> Checkout Now
+                    </button>
                 </div>
             </div>
         </div>
@@ -98,15 +163,25 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Hungry Up</h3>
-                    <p>Delivering delicious food with love since 2025</p>
+                    <p><i class="fas fa-fire"></i> Delivering delicious food with love since 2025</p>
+                    <p>We are committed to providing the best food delivery experience with fresh ingredients and
+                        amazing taste.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -114,14 +189,29 @@
                     <p><i class="fas fa-map-marker-alt"></i> Love Road, Mirpur, Dhaka</p>
                     <p><i class="fas fa-phone"></i> +8801773593797</p>
                     <p><i class="fas fa-envelope"></i> info@hungryup.com</p>
+                    <p><i class="fas fa-clock"></i> 10:00 AM - 11:00 PM</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on offers</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email"
+                            style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd; margin-bottom: 10px;">
+                        <button class="btn-primary" style="width: 100%; padding: 10px;">Subscribe</button>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Hungry Up. All rights reserved.</p>
+                <p>&copy; 2025 Hungry Up. All rights reserved. | Designed with <i class="fas fa-heart"
+                        style="color: var(--primary-color);"></i> by Hungry Up Team</p>
             </div>
         </div>
     </footer>
 
+    <!-- Toast Notification Container -->
+    <div id="toastContainer"></div>
+
     <script src="script.js"></script>
 </body>
+
 </html>

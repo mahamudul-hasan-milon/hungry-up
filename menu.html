@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/logo.png" type="img/logo.png">
+    <meta name="description"
+        content="Browse our delicious menu featuring pizzas, burgers, sandwiches, and more. Order now for fast delivery.">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
     <title>Our Menu - Hungry Up</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
@@ -16,13 +22,24 @@
                 <img src="img/logo.png" alt="Hungry Up Logo">
                 <h1>Hungry Up</h1>
             </div>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html" class="active">Menu</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#" id="cartLink">Cart <span class="cart-count">0</span></a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="menu.html" class="active"><i class="fas fa-utensils"></i> Menu</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li>
+                        <a href="#" id="cartLink">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                    <li><a href="#" id="favoritesLink"><i class="fas fa-heart"></i> Favorites</a></li>
                 </ul>
             </nav>
         </div>
@@ -34,17 +51,69 @@
             <div class="menu-header">
                 <h1>Our Delicious Menu</h1>
                 <p>Explore our wide selection of mouth-watering dishes</p>
+
+                <div class="menu-search" style="max-width: 500px; margin: 30px auto;">
+                    <div class="form-group">
+                        <input type="text" id="searchInput" placeholder="Search for dishes..."
+                            style="width: 100%; padding: 15px; border-radius: 50px; border: 2px solid #ddd; font-size: 16px;">
+                    </div>
+                </div>
             </div>
-            
+
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">All Items</button>
-                <button class="filter-btn" data-category="pizza">Pizza</button>
-                <button class="filter-btn" data-category="burger">Burgers</button>
-                <button class="filter-btn" data-category="sandwich">Sandwiches</button>
+                <button class="filter-btn" data-category="pizza"><i class="fas fa-pizza-slice"></i> Pizza</button>
+                <button class="filter-btn" data-category="burger"><i class="fas fa-hamburger"></i> Burgers</button>
+                <button class="filter-btn" data-category="sandwich"><i class="fas fa-bread-slice"></i>
+                    Sandwiches</button>
+                <button class="filter-btn" data-category="dessert"><i class="fas fa-ice-cream"></i> Desserts</button>
+                <button class="filter-btn" data-category="drink"><i class="fas fa-glass-whiskey"></i> Drinks</button>
             </div>
-            
+
+            <div class="sort-options" style="display: flex; justify-content: flex-end; margin-bottom: 20px; gap: 10px;">
+                <select id="sortSelect" style="padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                    <option value="default">Sort by: Default</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Rating: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+            </div>
+
             <div class="food-grid" id="menuFoods">
                 <!-- Menu items will be loaded here by JavaScript -->
+            </div>
+
+            <div id="noResults" style="display: none; text-align: center; padding: 50px;">
+                <i class="fas fa-search" style="font-size: 60px; color: #ddd; margin-bottom: 20px;"></i>
+                <h3>No items found</h3>
+                <p>Try adjusting your search or filter</p>
+            </div>
+
+            <!-- Load More Button -->
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn-primary" id="loadMore" style="display: none;">
+                    <i class="fas fa-plus"></i> Load More Items
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Banner -->
+    <section
+        style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 40px 0; margin-top: 50px;">
+        <div class="container">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <div>
+                    <h2 style="font-size: 1.8rem; margin-bottom: 10px;">Special Weekend Offer!</h2>
+                    <p style="opacity: 0.9;">Get 25% off on all orders above $30. Use code: WEEKEND25</p>
+                </div>
+                <div>
+                    <a href="index.html" class="btn-primary" style="background: white; color: var(--primary-color);">
+                        <i class="fas fa-gift"></i> Claim Offer
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -53,19 +122,26 @@
     <div class="cart-modal" id="cartModal">
         <div class="cart-content">
             <div class="cart-header">
-                <h2>Your Cart</h2>
+                <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
                 <span class="close-btn" id="closeCart">&times;</span>
             </div>
             <div class="cart-body">
                 <div id="cartItems">
                     <!-- Cart items will be loaded here -->
-                    <p class="empty-cart-message">Your cart is empty</p>
+                    <div class="empty-cart-message">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Your cart is empty</p>
+                        <a href="menu.html" class="btn-primary" onclick="closeCartModal()">Browse Menu</a>
+                    </div>
                 </div>
                 <div class="cart-footer">
                     <div class="cart-total">
-                        <h3>Total: $<span id="cartTotal">00.0</span></h3>
+                        <h3>Total:</h3>
+                        <h3>$<span id="cartTotal">00.0</span></h3>
                     </div>
-                    <button class="btn-primary checkout-btn" id="checkoutBtn">Checkout</button>
+                    <button class="btn-primary checkout-btn" id="checkoutBtn">
+                        <i class="fas fa-credit-card"></i> Checkout Now
+                    </button>
                 </div>
             </div>
         </div>
@@ -77,15 +153,21 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Hungry Up</h3>
-                    <p>Delivering delicious food with love since 2025</p>
+                    <p><i class="fas fa-fire"></i> Delivering delicious food with love since 2025</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -102,5 +184,92 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Additional menu page functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('searchInput');
+            const sortSelect = document.getElementById('sortSelect');
+            const loadMoreBtn = document.getElementById('loadMore');
+
+            // Search functionality
+            if (searchInput) {
+                searchInput.addEventListener('input', function () {
+                    const searchTerm = this.value.toLowerCase();
+                    const foodCards = document.querySelectorAll('.food-card');
+                    let visibleCount = 0;
+
+                    foodCards.forEach(card => {
+                        const foodName = card.querySelector('h3').textContent.toLowerCase();
+                        const foodDesc = card.querySelector('p').textContent.toLowerCase();
+
+                        if (foodName.includes(searchTerm) || foodDesc.includes(searchTerm)) {
+                            card.style.display = 'block';
+                            visibleCount++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    // Show/hide no results message
+                    const noResults = document.getElementById('noResults');
+                    if (visibleCount === 0) {
+                        noResults.style.display = 'block';
+                    } else {
+                        noResults.style.display = 'none';
+                    }
+                });
+            }
+
+            // Sort functionality
+            if (sortSelect) {
+                sortSelect.addEventListener('change', function () {
+                    const sortValue = this.value;
+                    const menuFoods = document.getElementById('menuFoods');
+                    const foodCards = Array.from(menuFoods.querySelectorAll('.food-card'));
+
+                    foodCards.sort((a, b) => {
+                        const priceA = parseFloat(a.querySelector('.price span').textContent.replace('$', ''));
+                        const priceB = parseFloat(b.querySelector('.price span').textContent.replace('$', ''));
+                        const nameA = a.querySelector('h3').textContent;
+                        const nameB = b.querySelector('h3').textContent;
+                        const ratingA = parseFloat(a.querySelector('.rating span').textContent);
+                        const ratingB = parseFloat(b.querySelector('.rating span').textContent);
+
+                        switch (sortValue) {
+                            case 'price-low':
+                                return priceA - priceB;
+                            case 'price-high':
+                                return priceB - priceA;
+                            case 'rating':
+                                return ratingB - ratingA;
+                            case 'name':
+                                return nameA.localeCompare(nameB);
+                            default:
+                                return 0;
+                        }
+                    });
+
+                    // Reappend sorted cards
+                    foodCards.forEach(card => menuFoods.appendChild(card));
+                });
+            }
+
+            // Load more functionality
+            if (loadMoreBtn) {
+                // Simulate loading more items
+                loadMoreBtn.addEventListener('click', function () {
+                    this.innerHTML = '<span class="loading"></span> Loading...';
+                    this.disabled = true;
+
+                    setTimeout(() => {
+                        // In a real app, you would fetch more items from server
+                        showToast('No more items to load!', 'error');
+                        this.style.display = 'none';
+                    }, 1500);
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>
